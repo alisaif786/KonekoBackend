@@ -90,7 +90,8 @@ public class SecurityConfig {
         configuration.setAllowedOrigins(
                 List.of(
                         "http://localhost:5173",
-                        "https://koneko-one.vercel.app"
+                        "https://koneko-one.vercel.app",
+                        "https://localhost"
                 )
         );
 
