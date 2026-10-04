@@ -23,31 +23,10 @@ public class DeviceTokenController {
             @RequestBody DeviceTokenRequest request,
             Authentication authentication) {
 
-        System.out.println("========== DEVICE TOKEN DEBUG ==========");
-
-        System.out.println("Authentication object: " + authentication);
-
-        if (authentication == null) {
-            System.out.println("ERROR: Authentication is NULL");
-            return ResponseEntity
-                    .status(401)
-                    .body("User not authenticated");
-        }
-
-        System.out.println("Authenticated user: "
-                + authentication.getName());
-
-        System.out.println("FCM Token: "
-                + request.getToken());
-
         deviceTokenService.saveToken(
                 authentication.getName(),
                 request
         );
-
-        System.out.println("Device token saved successfully");
-
-        System.out.println("========================================");
 
         return ResponseEntity.ok(
                 "Device token saved successfully."

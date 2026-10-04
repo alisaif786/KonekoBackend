@@ -37,10 +37,6 @@ public class DeviceTokenService {
         deviceToken.setUser(user);
         deviceToken.setToken(request.getToken());
 
-        DeviceToken saved = deviceTokenRepository.save(deviceToken);
-
-        System.out.println("SAVED DEVICE TOKEN ID = " + saved.getId());
-        System.out.println("SAVED USER = " +
-                (saved.getUser() != null ? saved.getUser().getId() : "NULL"));
+        deviceTokenRepository.save(deviceToken);
     }
 }
